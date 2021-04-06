@@ -1,5 +1,4 @@
-import './sass/main.scss';
-import service from './js/services.js';
+import spinnerSrc from './images/sprite.svg'
 
 import headerTemplate from './templates/header.hbs';
 
@@ -24,10 +23,15 @@ footerContainer.innerHTML = footerTemplate();
 import spinerTemplate from './templates/spiner.hbs';
 
 const spinerContainer = document.getElementById('spiner');
-spinerContainer.innerHTML = spinerTemplate();
+spinerContainer.innerHTML = spinerTemplate({src: spinnerSrc});
 
 import modalTemplate from './templates/modal.hbs';
 
 const modalContainer = document.getElementById('myModal');
 modalContainer.innerHTML = modalTemplate();
+
+import './sass/main.scss';
+import './js/services.js';
+import './js/modal.js';
+
 // const debounce = require('lodash.debounce')

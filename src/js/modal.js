@@ -4,7 +4,7 @@ const btn = document.getElementById('myBtn');
 
 const span = document.getElementsByClassName('close')[0];
 
-modal.style.display = 'block';
+modal.style.display = 'block';//---------убрать
 
 btn.onclick = function () {
   modal.style.display = 'block';
