@@ -1,33 +1,33 @@
 import './sass/main.scss';
-import service from './js/services.js'
+import service from './js/services.js';
 
-import headerTemplate from "./templates/header.hbs";
+import headerTemplate from './templates/header.hbs';
 
-const headerContainer = document.getElementById("header");
+const headerContainer = document.getElementById('header');
 headerContainer.innerHTML = headerTemplate();
 
-import headerLibraryTemplate from "./templates/header-2.hbs";
+import headerLibraryTemplate from './templates/header-2.hbs';
 
-const headerLibraryContainer = document.getElementById("header-2");
+const headerLibraryContainer = document.getElementById('header-2');
 headerLibraryContainer.innerHTML = headerLibraryTemplate();
 
-import mainTemplate from "./templates/main-gallery.hbs";
+import mainTemplate from './templates/main-gallery.hbs';
 
-const mainContainer = document.getElementById("main");
+const mainContainer = document.getElementById('main');
 mainContainer.innerHTML = mainTemplate();
 
-import footerTemplate from "./templates/footer.hbs";
+import footerTemplate from './templates/footer.hbs';
 
-const footerContainer = document.getElementById("footer");
+const footerContainer = document.getElementById('footer');
 footerContainer.innerHTML = footerTemplate();
 
-import spinerTemplate from "./templates/spiner.hbs";
+import spinerTemplate from './templates/spiner.hbs';
 
-const spinerContainer = document.getElementById("spiner");
+const spinerContainer = document.getElementById('spiner');
 spinerContainer.innerHTML = spinerTemplate();
 
-import modalTemplate from "./templates/modal.hbs";
+import modalTemplate from './templates/modal.hbs';
 
-const modalContainer = document.getElementById("myModal");
+const modalContainer = document.getElementById('myModal');
 modalContainer.innerHTML = modalTemplate();
 // const debounce = require('lodash.debounce')
