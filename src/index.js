@@ -28,6 +28,6 @@ spinerContainer.innerHTML = spinerTemplate();
 
 import modalTemplate from "./templates/modal.hbs";
 
-const modalContainer = document.getElementById("modal");
+const modalContainer = document.getElementById("myModal");
 modalContainer.innerHTML = modalTemplate();
 // const debounce = require('lodash.debounce')
