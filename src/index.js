@@ -1,3 +1,5 @@
+import './sass/main.scss';
+import './js/services.js';
 import spinnerSrc from './images/sprite.svg'
 
 import headerTemplate from './templates/header.hbs';
@@ -30,8 +32,7 @@ import modalTemplate from './templates/modal.hbs';
 const modalContainer = document.getElementById('myModal');
 modalContainer.innerHTML = modalTemplate();
 
-import './sass/main.scss';
-import './js/services.js';
-import './js/modal.js';
+
+// import './js/modal.js';
 
 // const debounce = require('lodash.debounce')

@@ -4,18 +4,18 @@ const btn = document.getElementById('myBtn');
 
 const span = document.getElementsByClassName('close')[0];
 
-modal.style.display = 'block';//---------убрать
+// modal.style.display = 'block';//---------убрать
 
-btn.onclick = function () {
+btn.addEventListener('click', function (){
   modal.style.display = 'block';
-};
+}
+) 
+span.addEventListener('click',function () {
+  modal.style.display = 'none'
+}) 
 
-span.onclick = function () {
-  modal.style.display = 'none';
-};
-
-window.onclick = function (event) {
+window.addEventListener('click',function (event) {
   if (event.target === modal) {
     modal.style.display = 'none';
   }
-};
+} )  
