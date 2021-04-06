@@ -1,0 +1,41 @@
+.btn-modal {
+  display: inline-block;
+  min-width: 125px;
+  height: 44px;
+
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+
+  text-transform: uppercase;
+
+  border-radius: 5px;
+
+  width: 136px;
+  height: 44px;
+  border: 1px solid #000000;
+
+  background: #ffffff;
+
+  // @include tablets {
+  //   width: 136px;
+  //   height: 44px;
+  // }
+  // @include phones {
+  //   width: 129.53px;
+  //   height: 44px;
+  // }
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+}
+
+.btn-modal.isActive {
+  color: #ffffff;
+  width: 125.03px;
+  height: 44px;
+  border: none;
+  background: #ff6b01;
+}
