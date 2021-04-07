@@ -18,11 +18,16 @@ const footerContainer = document.getElementById('footer');
 const spinerContainer = document.getElementById('spiner');
 const modalContainer = document.getElementById('myModal');
 
-headerContainer.innerHTML = headerTemplate();
+
+headerContainer.innerHTML = headerTemplate({src: spinnerSrc});
+headerLibraryContainer.innerHTML = headerLibraryTemplate();
+mainContainer.innerHTML = mainTemplate();
+
+footerContainer.innerHTML = footerTemplate({src: spinnerSrc});
 // headerLibraryContainer.innerHTML = headerLibraryTemplate();
 mainContainer.innerHTML = mainGalleryTemplate();
 // spinerContainer.innerHTML = spinerTemplate({ src: spinnerSrc });
-footerContainer.innerHTML = footerTemplate();
+
 modalContainer.innerHTML = modalTemplate();
 
 // import './js/modal.js';

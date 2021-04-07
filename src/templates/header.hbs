@@ -1,15 +1,20 @@
 <div class="container">
     <div class="header-navigation">
-        <div class="icon">&#9749 <span class="name-site">Filmoteka</span>
-            <!-- <svg>
-                        <use>&#9749</use>
-                    </svg> -->
-        </div>
+        <a href="#" class="logo-link">
+            <div class="icon">
+                <svg class="logo-icon">
+                    <use href="{{src}}#logo"></use>
+                </svg>
+
+                <span class="name-site">Filmoteka</span>
+            </div>
+        </a>
+
 
         <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-list__item current">
-                    <a href="#" class="nav-item__link">HOME</a>
+                    <a href="#" class="nav-item__link current">HOME</a>
                 </li>
                 <li class="nav-list__item current">
                     <a href="./myLibery.html" class="nav-item__link">MY LIBARY</a>
@@ -17,9 +22,13 @@
             </ul>
         </nav>
     </div>
+</div>
+<form class="search-film">
+    <input type="text" name="name" id="name-film" class="name-film" placeholder="Название фильма">
+    <button class="icon-search">
+        <svg class="search-icon">
+            <use href="{{src}}#search"></use>
+        </svg>
+    </button>
+</form>
 
-    <form class="search-film">
-
-        <input type="text" name="name" id="name-film" class="name-film" placeholder="Название фильма">
-        <i class="icon-search">&#9903</i>
-    </form>

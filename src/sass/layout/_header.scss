@@ -8,8 +8,19 @@
   align-items: center;
   color: white;
 }
+.icon {
+  display: flex;
+  align-items: center;
+}
+.logo-link {
+  text-decoration: none;
+  color: var(--primary-text-color);
+}
 .name-site {
   font-size: 30px;
+}
+.name-site:hover {
+  color: #ff6b08;
 }
 .search-film {
   position: relative;
@@ -30,6 +41,9 @@
   text-decoration: none;
   color: white;
 }
+.nav-item__link:hover {
+  color: #ff6b08;
+}
 .name-film {
   width: 100%;
   border: none;
@@ -38,24 +52,38 @@
   background: transparent;
   font-size: 14px;
   color: white;
+  outline: none;
 }
 .icon-search {
   position: absolute;
+  border: none;
+  background: transparent;
+  outline: none;
   right: 5px;
   bottom: 2px;
+  cursor: pointer;
 }
-.footer-box {
-  text-align: center;
-  padding: 30px 0px;
-  background: #f7f7f7;
-  color: #545454;
-  font-size: 14px;
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  stroke: #818181;
+  margin-right: 10px;
 }
-.footer_link {
-  color: #545454;
+.logo-icon:hover {
+  width: 30px;
+  height: 30px;
+  stroke: #ff6b08;
 }
-.footer-icon {
-  margin: 0px 10px;
+.search-icon {
+  width: 12px;
+  height: 12px;
+  stroke: white;
+}
+.search-icon:hover {
+  width: 15px;
+  height: 15px;
+  stroke: #ff6b08;
 }
 @media screen and (max-width: 767px) {
   .name-site {
@@ -67,6 +95,9 @@
   .header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/home-mob@2x.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .footer-rext_two {
     margin-top: 10px;
@@ -76,6 +107,9 @@
   .header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/home-tablet@2x.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .header-container {
     padding: 58px 71px;
@@ -95,5 +129,8 @@
   .header {
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/home-decktop@2x.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
