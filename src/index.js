@@ -17,11 +17,11 @@ const spinerContainer = document.getElementById('spiner');
 const modalContainer = document.getElementById('myModal');
 
 
-headerContainer.innerHTML = headerTemplate();
+headerContainer.innerHTML = headerTemplate({src: spinnerSrc});
 headerLibraryContainer.innerHTML = headerLibraryTemplate();
 mainContainer.innerHTML = mainTemplate();
 spinerContainer.innerHTML = spinerTemplate({src: spinnerSrc});
-footerContainer.innerHTML = footerTemplate();
+footerContainer.innerHTML = footerTemplate({src: spinnerSrc});
 modalContainer.innerHTML = modalTemplate();
 
 
