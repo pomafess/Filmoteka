@@ -1,36 +1,36 @@
 import './sass/main.scss';
 import './js/services.js';
+
 import spinnerSrc from './images/sprite.svg'
-
 import headerTemplate from './templates/header.hbs';
-
-const headerContainer = document.getElementById('header');
-headerContainer.innerHTML = headerTemplate();
-
 import headerLibraryTemplate from './templates/header-2.hbs';
-
-const headerLibraryContainer = document.getElementById('header-2');
-headerLibraryContainer.innerHTML = headerLibraryTemplate();
-
 import mainTemplate from './templates/main-gallery.hbs';
-
-const mainContainer = document.getElementById('main');
-mainContainer.innerHTML = mainTemplate();
-
 import footerTemplate from './templates/footer.hbs';
-
-const footerContainer = document.getElementById('footer');
-footerContainer.innerHTML = footerTemplate();
-
 import spinerTemplate from './templates/spiner.hbs';
-
-const spinerContainer = document.getElementById('spiner');
-spinerContainer.innerHTML = spinerTemplate({src: spinnerSrc});
-
 import modalTemplate from './templates/modal.hbs';
 
+const headerContainer = document.getElementById('header');
+const headerLibraryContainer = document.getElementById('header-2');
+const mainContainer = document.getElementById('main');
+const footerContainer = document.getElementById('footer');
+const spinerContainer = document.getElementById('spiner');
 const modalContainer = document.getElementById('myModal');
+
+
+headerContainer.innerHTML = headerTemplate();
+headerLibraryContainer.innerHTML = headerLibraryTemplate();
+mainContainer.innerHTML = mainTemplate();
+spinerContainer.innerHTML = spinerTemplate({src: spinnerSrc});
+footerContainer.innerHTML = footerTemplate();
 modalContainer.innerHTML = modalTemplate();
+
+
+
+
+
+
+
+
 
 
 // import './js/modal.js';
