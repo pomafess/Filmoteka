@@ -1,7 +1,7 @@
 import './sass/main.scss';
 import './js/MovieHttpService';
 import './js/renderMainPage';
-// import './js/modal.js';
+import './js/modal';
 
 import spinnerSrc from './images/sprite.svg';
 import headerTemplate from './templates/header.hbs';
