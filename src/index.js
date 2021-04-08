@@ -12,18 +12,18 @@ import footerTemplate from './templates/footer.hbs';
 import modalTemplate from './templates/modal.hbs';
 
 const headerContainer = document.getElementById('header');
-const headerLibraryContainer = document.getElementById('header-2');
+// const headerLibraryContainer = document.getElementById('header-2');
 const mainContainer = document.getElementById('main');
 const footerContainer = document.getElementById('footer');
 const spinerContainer = document.getElementById('spiner');
 const modalContainer = document.getElementById('myModal');
 
 
-headerContainer.innerHTML = headerTemplate({src: spinnerSrc});
-headerLibraryContainer.innerHTML = headerLibraryTemplate();
-mainContainer.innerHTML = mainTemplate();
+headerContainer.innerHTML = headerTemplate({ src: spinnerSrc });
+// headerLibraryContainer.innerHTML = headerLibraryTemplate();
 
-footerContainer.innerHTML = footerTemplate({src: spinnerSrc});
+
+footerContainer.innerHTML = footerTemplate({ src: spinnerSrc });
 // headerLibraryContainer.innerHTML = headerLibraryTemplate();
 mainContainer.innerHTML = mainGalleryTemplate();
 // spinerContainer.innerHTML = spinerTemplate({ src: spinnerSrc });
