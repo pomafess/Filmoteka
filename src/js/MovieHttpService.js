@@ -20,6 +20,7 @@ class MovieHttpService {
     return fullUrl
   }
 }
+export default MovieHttpService;
 /////////////////////// Макс прости ...........
 //   constructor() {
 //     this.searchQuery = 'hatiko';
@@ -148,7 +149,7 @@ class MovieHttpService {
 //   }
 // }
 
-export default MovieHttpService;
+
 
 // request.fetchMovie();
 // request.fetchMoviesGenre();

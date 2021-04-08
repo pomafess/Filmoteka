@@ -6,7 +6,7 @@ import closeModal from './js/closeModal';
 import searchFilmForm from './js/searchFilmForm';
 
 
-import spinnerSrc from './images/sprite.svg';
+import svg from './images/sprite.svg';
 import headerTemplate from './templates/header.hbs';
 // import headerLibraryTemplate from './templates/header-2.hbs';
 import mainGalleryTemplate from './templates/main-gallery.hbs';
@@ -22,9 +22,9 @@ const footerContainer = document.getElementById('footer');
 const modalContainer = document.getElementById('myModal');
 
 
-headerContainer.innerHTML = headerTemplate({ src: spinnerSrc });
+headerContainer.innerHTML = headerTemplate({ src: svg });
 mainContainer.innerHTML = mainGalleryTemplate();
-footerContainer.innerHTML = footerTemplate({ src: spinnerSrc });
+footerContainer.innerHTML = footerTemplate({ src: svg });
 modalContainer.innerHTML = modalTemplate();
 
 

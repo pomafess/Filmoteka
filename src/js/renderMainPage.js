@@ -4,8 +4,8 @@ import MovieHttpService from './MovieHttpService.js';
 
 function renderMainPage(films, filmsContainer) {
   filmsContainer.innerHTML = filmListTemplate(films.results);
-  const paination = createPagination(films.total_pages);
-  filmsContainer.after(paination);
+  const pagination = createPagination(films.total_pages);
+  filmsContainer.after(pagination);
 
 }
 export default renderMainPage
