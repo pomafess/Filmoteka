@@ -1,12 +1,19 @@
 import filmListTemplate from '../templates/film-list.hbs';
-import MovieHttpService from './MovieHttpService';
-const movieService = new MovieHttpService();
-document.addEventListener('DOMContentLoaded', async function (event) {
-  const filmList = document.querySelector('#main .film-list');
-  const films = await movieService.fetchTrendingMovies();
-  filmList.innerHTML = filmListTemplate(films);
-});
+import createPagination from './createPagination.js';
+import MovieHttpService from './MovieHttpService.js';
 
+function renderMainPage(films, filmsContainer) {
+  filmsContainer.innerHTML = filmListTemplate(films.results);
+  const paination = createPagination(films.total_pages);
+  filmsContainer.after(paination);
+
+}
+export default renderMainPage
+// const movieService = new MovieHttpService();
+// document.addEventListener('DOMContentLoaded', async function (event) {
+//   const filmList = document.querySelector('#main .film-list');
+//   const films = await movieService.fetchTrendingMovies();
+// });
 // function fetchTrendingMovies() {
 //   const url =
 //     'https://api.themoviedb.org/3/trending/movie/day?api_key=923c2cf88ec4338da74c768a045101f0';

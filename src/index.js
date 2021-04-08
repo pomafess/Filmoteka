@@ -1,7 +1,10 @@
 import './sass/main.scss';
-import './js/MovieHttpService';
-import './js/renderMainPage';
-import './js/modal';
+import MovieHttpService from './js/MovieHttpService';
+import renderFilms from './js/renderMainPage';
+import showFilmInfo from './js/showFilmInfo';
+import closeModal from './js/closeModal';
+import searchFilmForm from './js/searchFilmForm';
+
 
 import spinnerSrc from './images/sprite.svg';
 import headerTemplate from './templates/header.hbs';
@@ -15,20 +18,45 @@ const headerContainer = document.getElementById('header');
 // const headerLibraryContainer = document.getElementById('header-2');
 const mainContainer = document.getElementById('main');
 const footerContainer = document.getElementById('footer');
-const spinerContainer = document.getElementById('spiner');
+// const spinerContainer = document.getElementById('spiner');
 const modalContainer = document.getElementById('myModal');
 
 
 headerContainer.innerHTML = headerTemplate({ src: spinnerSrc });
-// headerLibraryContainer.innerHTML = headerLibraryTemplate();
-
-
-footerContainer.innerHTML = footerTemplate({ src: spinnerSrc });
-// headerLibraryContainer.innerHTML = headerLibraryTemplate();
 mainContainer.innerHTML = mainGalleryTemplate();
+footerContainer.innerHTML = footerTemplate({ src: spinnerSrc });
+modalContainer.innerHTML = modalTemplate();
+
+
+const movieHttpService = new MovieHttpService();
+
+const filmsSearchOptions = {
+    endpoint: 'trending/all/day',
+    options: {
+    page: 1
+    }
+   
+}
+window.addEventListener('DOMContentLoaded', async () => {
+    const listGallery = document.querySelector('.film-list');
+    try {
+        const films = await movieHttpService.get(filmsSearchOptions);
+        renderFilms(films, listGallery);
+listGallery.addEventListener('click', showFilmInfo)
+    } catch (error) {
+        listGallery.innerHTML = `<p>Movie is not found.</p>`;
+    }
+    const closeModalButton = modalContainer.querySelector('.close');
+    closeModalButton.addEventListener('click', closeModal);
+    const formSearch = document.getElementById('search-film');
+    formSearch.addEventListener('submit', searchFilmForm)
+});
+// headerLibraryContainer.innerHTML = headerLibraryTemplate();
+// headerLibraryContainer.innerHTML = headerLibraryTemplate();
 // spinerContainer.innerHTML = spinerTemplate({ src: spinnerSrc });
 
-modalContainer.innerHTML = modalTemplate();
+
+
 
 // import './js/modal.js';
 
