@@ -1,11 +1,15 @@
 import filmListTemplate from '../templates/film-list.hbs';
-import createPagination from './createPagination.js';
+import createPagination from './pagination/index.js';
 import MovieHttpService from './MovieHttpService.js';
+const movieHttpService = new MovieHttpService();
 
-function renderMainPage(films, filmsContainer) {
-  filmsContainer.innerHTML = filmListTemplate(films.results);
-  const pagination = createPagination(films.total_pages);
+function renderMainPage(filmsData, filmsContainer) {
+  filmsContainer.innerHTML = filmListTemplate(filmsData.results);
+  const pagination = createPagination(filmsData.total_pages)
   filmsContainer.after(pagination);
+  // const pagination = createPagination(filmsData.total_pages);
+  // console.log(pagination)
+  // 
 
 }
 export default renderMainPage

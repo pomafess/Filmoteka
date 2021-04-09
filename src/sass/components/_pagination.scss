@@ -1,64 +1,51 @@
-.pagination-spinner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.pagination-container {
+  @include flex(center, center);
 }
-
 .pages-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center);
+  flex: 1 1 100%;
   list-style: none;
   padding: 0;
-}
 
-.pages-list-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  &-item {
+    @include flex(center, center);
+    flex: 0 0 40px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: transparent;
 
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 5px;
-  background-color: transparent;
-}
+    &:hover .pages-list-link[data-id='pagination'],
+    &:focus .pages-list-link[data-id='pagination'] {
+      color: var(--primary-text-color);
+    }
 
-.pages-list-item:hover,
-.pages-list-item:focus {
-  background-color: #ff6b08;
-}
+    &[data-id='pagination-item']:hover,
+    &[data-id='pagination-item']:focus {
+      background-color: var(--subtitle-orange-color);
+    }
+  }
 
-.pages-list-item:hover .pages-list-link,
-.pages-list-item:focus .pages-list-link {
-  color: #ffffff;
-}
-
-.pages-list-link {
-  font-family: Roboto, sans-serif;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.333;
-  text-decoration: none;
-  color: #000000;
+  &-link {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.333;
+    text-decoration: none;
+    color: var(--title-colour);
+    background-color: transparent;
+    pointer-events: none;
+  }
 }
 
 .current-item {
-  background-color: #ff6b08;
+  background-color: var(--subtitle-orange-color);
 }
 .current-link {
   color: #ffffff;
 }
-.arrow-btn {
-  position: relative;
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  background-color: #e5e5e5;
-  border-radius: 5px;
-  border: none;
-}
 
+.active {
+  display: block;
+}
 .arrow-icon {
   position: absolute;
   width: 16px;
@@ -66,6 +53,5 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  stroke: #000000;
-  fill: #000000;
+  stroke: var(--title-colour);
 }

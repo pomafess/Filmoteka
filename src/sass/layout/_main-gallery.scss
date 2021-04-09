@@ -1,54 +1,70 @@
-.film-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(274px, 1fr));
-  grid-gap: 30px;
+.box {
+  @media screen and (min-width: 320px) {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  @media screen and (min-width: 768px) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 }
-
-.film-img {
-  border-radius: 5px;
-  width: 100%;
+@media screen and (min-width: 320px) {
+  .film-list {
+    padding-bottom: 40px;
+  }
 }
-.film-text-box {
-  display: flex;
-  margin-top: 2px;
+@media screen and (min-width: 768px) {
+  .film-list {
+    padding-bottom: 50px;
+  }
 }
-.film-title {
-  margin-top: 10px;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
-  text-transform: uppercase;
-  color: #000000;
+.film {
+  &-list {
+    @include grid(274px, auto-fill);
+    grid-gap: 30px;
+  }
+  &-img {
+    border-radius: 5px;
+    width: 100%;
+  }
+  &-title {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.333;
+    text-transform: uppercase;
+    color: var(--title-colour);
+  }
+  &-text-box {
+    @include flex;
+    margin-top: 5px;
+  }
+  &-genres {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.166;
+    color: var(--subtitle-orange-color);
+  }
+  &-text-date {
+    margin-left: 3px;
+  }
+  &-text-rating {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1.166;
+    text-align: center;
+    padding: 1px;
+    margin-left: 5px;
+    width: 36px;
+    height: 16px;
+    border-radius: 5px;
+    background-color: var(--subtitle-orange-color);
+    color: white;
+  }
 }
-.film-text {
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
-  text-transform: uppercase;
-  padding-right: 5px;
-  color: #ff6b01;
-}
-.film-text-date {
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
-  text-transform: uppercase;
-  margin-left: 5px;
-  color: #ff6b01;
-}
-.film-text-rating {
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
-  text-transform: uppercase;
-  text-align: center;
-  margin-left: 5px;
-  width: 36px;
-  height: 16px;
-  border-radius: 5px;
-  background-color: #ff6b01;
-  color: white;
-}
-.film-text:first-child {
-  border-right: 2px solid #ff6b08;
+.film-text-date::before {
+  content: '\2758';
+  color: var(--subtitle-orange-color);
+  margin-right: 5px;
+  display: inline-block;
 }

@@ -1,11 +1,11 @@
 {{#each this}}
 <li class="film-item">
   <img class="film-img" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}">
-  <h3 class="film-title">{{original_title}}</h3>
-  <div>
-    <p class="film-text">{{filmGenres}}</p>
-    <p class="film-text-date">{{release_year}}</p>
-    {{#if myLibrary}}
+  <h3 class="film-title">{{title}}</h3>
+  <div class="film-text-box">
+    <p class="film-genres">{{filmGenres}}</p>
+    <p class="film-text-date film-genres">{{release_year}}</p>
+    {{#if target}}
     <p class="film-text-rating">{{vote_average}}</p>
     {{/if}}
   </div>

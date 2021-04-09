@@ -4,6 +4,7 @@ import renderFilms from './js/renderMainPage';
 import showFilmInfo from './js/showFilmInfo';
 import closeModal from './js/closeModal';
 import searchFilmForm from './js/searchFilmForm';
+import filmsSearchOptions from "./js/filmsSearchOptions"
 
 
 import svg from './images/sprite.svg';
@@ -30,20 +31,22 @@ modalContainer.innerHTML = modalTemplate();
 
 const movieHttpService = new MovieHttpService();
 
-const filmsSearchOptions = {
-    endpoint: 'trending/all/day',
-    options: {
-    page: 1
-    }
-   
-}
+// const filmsSearchOptions = {
+//     endpoint: 'trending/all/day',
+//     options: {
+//         page: 1
+//     }
+// }
+
 window.addEventListener('DOMContentLoaded', async () => {
     const listGallery = document.querySelector('.film-list');
     try {
-        const films = await movieHttpService.get(filmsSearchOptions);
-        renderFilms(films, listGallery);
-listGallery.addEventListener('click', showFilmInfo)
+        const filmsData = await movieHttpService.get(filmsSearchOptions);
+
+        renderFilms(filmsData, listGallery);
+        listGallery.addEventListener('click', showFilmInfo)
     } catch (error) {
+        console.log(error)
         listGallery.innerHTML = `<p>Movie is not found.</p>`;
     }
     const closeModalButton = modalContainer.querySelector('.close');
