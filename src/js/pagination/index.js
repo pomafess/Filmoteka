@@ -2,6 +2,7 @@ import paginationTemplate from '../../templates/pagination.hbs';
 import MovieHttpService from '../MovieHttpService.js';
 import createPaginationArray from "./createPaginationArray.js";
 import filmsSearchOptions from "../filmsSearchOptions.js";
+import onPaginationBtnClick from './onPaginationBtnClick.js'
 
 const movieHttpService = new MovieHttpService();
 
