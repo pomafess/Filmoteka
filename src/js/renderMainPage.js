@@ -5,7 +5,7 @@ const movieHttpService = new MovieHttpService();
 
 function renderMainPage(filmsData, filmsContainer) {
   filmsContainer.innerHTML = filmListTemplate(filmsData.results);
-  const pagination = createPagination(filmsData.total_pages)
+  const pagination = createPagination(filmsData.total_pages, filmsContainer);
   filmsContainer.after(pagination);
   // const pagination = createPagination(filmsData.total_pages);
   // console.log(pagination)
