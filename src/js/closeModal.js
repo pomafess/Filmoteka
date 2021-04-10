@@ -1,4 +1,8 @@
+import openModal from './openModal.js';
+
 function closeModal(e) {
-///очищать modalContent и  закрывать
+  backdrop.classList.remove('is-open');
+  modalContentRef.classList.remove('is-open');
+  ///очищать modalContent и  закрывать
 }
 export default closeModal;

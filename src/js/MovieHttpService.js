@@ -1,4 +1,3 @@
-
 const axios = require('axios');
 
 class MovieHttpService {
@@ -7,43 +6,40 @@ class MovieHttpService {
 
   async get({ endpoint, options }) {
     const requestOptions = this.createOptions(options);
-    const fullURL = await this.getFullUrl({ endpoint, options: requestOptions });
+    const fullURL = await this.getFullUrl({
+      endpoint,
+      options: requestOptions,
+    });
     try {
       const { data } = await axios.get(fullURL);
       const { results: films } = data;
       const genres = await this.getAllGenres();
 
       const filmCards = films.map(film => {
-        const filmGenres = film.genre_ids.map(id => {
-          const result = genres.find(genre => genre.id === id)
-          if (!result) {
-            return "";
-          }
-          return ` ${result.name}`;
-        }).filter(str => str !== "");
+        const filmGenres = film.genre_ids
+          .map(id => {
+            const result = genres.find(genre => genre.id === id);
+            if (!result) {
+              return '';
+            }
+            return ` ${result.name}`;
+          })
+          .filter(str => str !== '');
 
-          const release_year = film.release_date ? film.release_date.split('-')[0] : "future";
-          const title = film.original_title || film.original_name;
-          const filmCard = { ...film, filmGenres, release_year, title };
-          return filmCard;  
+        const release_year = film.release_date
+          ? film.release_date.split('-')[0]
+          : 'future';
+        const title = film.original_title || film.original_name;
+        const filmCard = { ...film, filmGenres, release_year, title };
+        return filmCard;
       });
       data.results = filmCards;
       return data;
-    }
-    catch (error) {
+    } catch (error) {
       console.log(error);
+      return error;
     }
   }
-
-// async getMovieBySearch() {
-//     const fullURL = `${MovieHttpService.BASE_URL}/search/movie?api_key=${MovieHttpService.KEY}&language=en-US&page=${page}&include_adult=false&query=${query}`;
-//     try {
-//       const { data } = await axios.get(fullURL);
-//       return data;
-//     } catch (error) {
-//       console.error('Error');
-//     }
-//   }
 
   async getMovieInfo(id) {
     const fullURL = await this.getFullUrl({
@@ -54,30 +50,32 @@ class MovieHttpService {
       return data;
     } catch (error) {
       console.error(error);
+      return error;
     }
   }
 
   async getAllGenres() {
-    const fullURL = this.getFullUrl({ endpoint: 'genre/movie/list' })
+    const fullURL = this.getFullUrl({ endpoint: 'genre/movie/list' });
     try {
       const { data } = await axios.get(fullURL);
       return data.genres;
     } catch (error) {
-      console.error('Error');
+      console.error(error);
+      return error;
     }
   }
-  
+
   createOptions(options) {
-    let stringOptions = "";
+    let stringOptions = '';
     for (const [key, value] of Object.entries(options)) {
-      stringOptions += `&${key}=${value}`
+      stringOptions += `&${key}=${value}`;
     }
     return stringOptions;
   }
-  
-  getFullUrl({ endpoint , options = '' }) {
+
+  getFullUrl({ endpoint, options = '' }) {
     const fullUrl = `${MovieHttpService.BASE_URL}/${endpoint}?api_key=${MovieHttpService.KEY}&${options}`;
-    return fullUrl
+    return fullUrl;
   }
 }
 
