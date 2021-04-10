@@ -3,7 +3,7 @@ import './sass/main.scss';
 import MovieHttpService from './js/MovieHttpService';
 import renderFilms from './js/renderMainPage';
 import showFilmInfo from './js/showFilmInfo';
-import closeModal from './js/closeModal';
+// import closeModal from './js/closeModal';
 import searchFilmForm from './js/searchFilmForm';
 import filmsSearchOptions from './js/filmsSearchOptions';
 
