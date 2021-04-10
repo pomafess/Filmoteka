@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', async () => {
     }
     const closeModalButton = modalContainer.querySelector('.close');
     closeModalButton.addEventListener('click', closeModal);
-    const formSearch = document.getElementById('search-film');
+    const formSearch = document.getElementById('search-form');
     formSearch.addEventListener('submit', searchFilmForm)
 });
 // headerLibraryContainer.innerHTML = headerLibraryTemplate();
