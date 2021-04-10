@@ -3,7 +3,7 @@ import './sass/main.scss';
 import MovieHttpService from './js/MovieHttpService';
 import renderFilms from './js/renderMainPage';
 import showFilmInfo from './js/showFilmInfo';
-import closeModal from './js/closeModal';
+// import closeModal from './js/closeModal';
 import searchFilmForm from './js/searchFilmForm';
 import filmsSearchOptions from './js/filmsSearchOptions';
 
@@ -26,6 +26,7 @@ document.body.insertAdjacentHTML('beforeend', modalTemplate());
 const movieHttpService = new MovieHttpService();
 
 window.addEventListener('DOMContentLoaded', async () => {
+
   const listGallery = document.querySelector('.film-list');
   try {
     const filmsData = await movieHttpService.get(filmsSearchOptions);
@@ -37,8 +38,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
   listGallery.addEventListener('click', showFilmInfo);
 
-  const closeModalButton = modalREf.querySelector('.close');
-  closeModalButton.addEventListener('click', closeModal);
+  // const closeModalButton = modalREf.querySelector('.close');
+  // closeModalButton.addEventListener('click', closeModal);
 
   const formSearch = document.getElementById('search-form');
   formSearch.addEventListener('submit', searchFilmForm);

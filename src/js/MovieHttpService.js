@@ -1,4 +1,5 @@
 const axios = require('axios');
+import noImgSrc from "../images/no_image.png";
 
 class MovieHttpService {
   static KEY = '923c2cf88ec4338da74c768a045101f0';
@@ -29,6 +30,12 @@ class MovieHttpService {
         const release_year = film.release_date
           ? film.release_date.split('-')[0]
           : 'future';
+        if (film.poster_path) {
+          film.poster_path = `https://image.tmdb.org/t/p/w500/${film.poster_path}`
+        } else {
+          film.poster_path = noImgSrc;
+        }
+
         const title = film.original_title || film.original_name;
         const filmCard = { ...film, filmGenres, release_year, title };
         return filmCard;
