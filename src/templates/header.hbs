@@ -1,33 +1,28 @@
 <div class="container">
     <div class="header-navigation">
-        <a href="#" class="logo-link">
-            <div class="icon">
-                <svg class="logo-icon">
-                    <use href="{{src}}#logo"></use>
-                </svg>
-
-                <span class="name-site">Filmoteka</span>
-            </div>
+        <a href="#" class="logo-link logo">
+            <svg class="logo-icon">
+                <use href="{{src}}#logo"></use>
+            </svg>
+            <span class="logo-name-site"></span>
         </a>
-
-
         <nav class="nav">
             <ul class="nav-list">
-                <li class="nav-list__item current">
-                    <a href="#" class="nav-item__link current">HOME</a>
+                <li class="nav-list__item active">
+                    <a href="#" class="nav-item__link" id="home">HOME</a>
                 </li>
-                <li class="nav-list__item current">
-                    <a href="./myLibery.html" class="nav-item__link">MY LIBARY</a>
+                <li class="nav-list__item">
+                    <a href="/myLibery" class="nav-item__link" id="libery">MY LIBARY</a>
                 </li>
             </ul>
         </nav>
     </div>
+    <form class="search-form" id="search-form">
+        <input type="text" name="name" id="search-form-input" class="search-form-input" placeholder="Search films">
+        <button class="btn-search">
+            <svg class="btn-search-icon">
+                <use href="{{src}}#search"></use>
+            </svg>
+        </button>
+    </form>
 </div>
-<form id="search-film" class="search-film">
-    <input type="text" name="name" id="name-film" class="name-film" placeholder="Название фильма">
-    <button class="icon-search">
-        <svg class="search-icon">
-            <use href="{{src}}#search"></use>
-        </svg>
-    </button>
-</form>

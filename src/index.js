@@ -40,6 +40,8 @@ const movieHttpService = new MovieHttpService();
 
 window.addEventListener('DOMContentLoaded', async () => {
     const listGallery = document.querySelector('.film-list');
+    // filmsSearchOptions.endpoint = "movie/search"
+    // filmsSearchOptions.options.query = "batman"
     try {
         const filmsData = await movieHttpService.get(filmsSearchOptions);
 

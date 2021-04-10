@@ -1,7 +1,8 @@
  const filmsSearchOptions = {
     endpoint: 'trending/all/day',
     options: {
-        page: 1
+        page: 1,
+        query: '',
     }
 };
 

@@ -5,13 +5,6 @@ class MovieHttpService {
   static KEY = '923c2cf88ec4338da74c768a045101f0';
   static BASE_URL = 'https://api.themoviedb.org/3';
 
-  constructor() {
-    this.searchQuery = '';
-    this.page = 1;
-    this.name = '';
-    this.movieId = 550;
-  }
-
   async get({ endpoint, options }) {
     const requestOptions = this.createOptions(options);
     const fullURL = await this.getFullUrl({ endpoint, options: requestOptions });
@@ -26,7 +19,7 @@ class MovieHttpService {
           if (!result) {
             return "";
           }
-          return result.name;
+          return ` ${result.name}`;
         }).filter(str => str !== "");
 
           const release_year = film.release_date ? film.release_date.split('-')[0] : "future";
@@ -39,6 +32,28 @@ class MovieHttpService {
     }
     catch (error) {
       console.log(error);
+    }
+  }
+
+// async getMovieBySearch() {
+//     const fullURL = `${MovieHttpService.BASE_URL}/search/movie?api_key=${MovieHttpService.KEY}&language=en-US&page=${page}&include_adult=false&query=${query}`;
+//     try {
+//       const { data } = await axios.get(fullURL);
+//       return data;
+//     } catch (error) {
+//       console.error('Error');
+//     }
+//   }
+
+  async getMovieInfo(id) {
+    const fullURL = await this.getFullUrl({
+      endpoint: `movie/${id}`,
+    });
+    try {
+      const { data } = await axios.get(fullURL);
+      return data;
+    } catch (error) {
+      console.error(error);
     }
   }
 
