@@ -38,8 +38,8 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
   listGallery.addEventListener('click', showFilmInfo);
 
-  const closeModalButton = modalREf.querySelector('.close');
-  closeModalButton.addEventListener('click', closeModal);
+  // const closeModalButton = modalREf.querySelector('.close');
+  // closeModalButton.addEventListener('click', closeModal);
 
   const formSearch = document.getElementById('search-form');
   formSearch.addEventListener('submit', searchFilmForm);
