@@ -13,18 +13,22 @@ async function searchFilmForm(e) {
     try {
         filmsSearchOptions.options.query = myInputValue;
         filmsSearchOptions.endpoint = "search/movie";
-        const films = await movieHttpService.get(filmsSearchOptions);
+        const films = await movieHttpService.get(filmsSearchOptions);        
         if (!films.results.length) {
             myInput.insertAdjacentHTML("afterend", `
             <p class="not-found">Search result not successful. Enter the correct movie name</p>
             `)
         } else {
-            console.log(films);
             renderFilms(films, listGallery);
-            document.querySelector('.not-found').textContent = "";
+            const errorMsg = this.querySelector('.not-found');
+            if (errorMsg) {
+                errorMsg.remove();
+            }
         }
         this.reset();
-    } catch (error) {
+    }
+    catch (error) {
+        console.log(error)
         return error;
     }
 }
