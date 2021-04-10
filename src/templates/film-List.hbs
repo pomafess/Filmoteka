@@ -1,12 +1,12 @@
 {{#each this}}
-<li class="film-item">
-  <img class="film-img" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}">
-  <h3 class="film-title">{{title}}</h3>
-  <div class="film-text-box">
-    <p class="film-genres">{{filmGenres}}</p>
-    <p class="film-text-date film-genres">{{release_year}}</p>
+<li class="film-item" data-id="{{id}}">
+  <img class="film-img" src="https://image.tmdb.org/t/p/w500/{{poster_path}}" alt="{{title}}" data-id="{{id}}">
+  <h3 class=" film-title" data-id="{{id}}">{{title}} </h3>
+  <div class="film-text-box" data-id="{{id}}">
+    <p class="film-genres" data-id="{{id}}">{{filmGenres}}</p>
+    <p class="film-text-date film-genres" data-id="{{id}}">{{release_year}}</p>
     {{#if target}}
-    <p class="film-text-rating">{{vote_average}}</p>
+    <p class="film-text-rating" data-id="{{id}}">{{vote_average}}</p>
     {{/if}}
   </div>
 </li>
