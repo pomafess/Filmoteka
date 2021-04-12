@@ -42,6 +42,7 @@ const createPagination = (total_pages, filmsContainer) => {
     paginationContainer.addEventListener("click", async function (e) {
         e.preventDefault();
         const { id } = e.target.dataset;
+        console.log(e.target.dataset)
         if (!id) {
             return;
         }
