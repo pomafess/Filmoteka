@@ -15,7 +15,7 @@ async function searchFilmForm(e) {
         filmsSearchOptions.options.query = myInputValue;
         filmsSearchOptions.endpoint = "search/movie";
         const films = await movieHttpService.get(filmsSearchOptions);        
-        if (!films.results.length) {
+        if ( !films.results.length) {
             myInput.insertAdjacentHTML("afterend", `
             <p class="not-found">Search result is not successful. Enter the correct movie name.</p>
             `)
@@ -29,6 +29,7 @@ async function searchFilmForm(e) {
         if (errorMsg) {
                 errorMsg.remove();
             }
+
     }
     catch (error) {
         console.log(error)
