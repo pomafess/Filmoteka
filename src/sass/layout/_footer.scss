@@ -1,18 +1,25 @@
-.footer-box {
-  text-align: center;
-  padding: 30px 0px;
+.footer {
   background: #f7f7f7;
-  color: #545454;
-  font-size: 14px;
+
+  &-box {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0px;
+    color: #545454;
+    font-size: 14px;
+  }
+
+  &_link {
+    color: #545454;
+  }
+
+  &-icon {
+    margin: 0px 10px;
+  }
 }
-.footer_link {
-  color: #545454;
-}
-.footer-icon {
-  margin: 0px 10px;
-}
-.favorite-icon{
-    width: 14px;
-    height: 13px;
-    fill: #ff6b08;
+
+.favorite-icon {
+  width: 14px;
+  height: 13px;
+  fill: #ff6b08;
 }
