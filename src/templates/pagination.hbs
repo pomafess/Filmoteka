@@ -1,4 +1,4 @@
-<a class="arrow-btn prev-page-btn" href="#" role="button">
+<a class="arrow-btn prev-page-btn" href="#" role="button" data-id="prev">
     <svg class="arrow-icon">
         <use href="{{src}}#arrow-left"></use>
     </svg>
@@ -6,13 +6,13 @@
 
 <ul class="pages-list">
     {{#each list}}
-    <li class="pages-list-item" data-id="pagination-item">
+    <li class="pages-list-item" data-type="pagination-item" data-id="{{this}}">
         <a href="" class="pages-list-link" data-id="pagination">{{this}}</a>
     </li>
     {{/each}}
 </ul>
 
-<a class="arrow-btn next-page-btn" href="#" role="button">
+<a class="arrow-btn next-page-btn" href="#" role="button" data-id="next">
     <svg class="arrow-icon">
         <use href="{{src}}#arrow-right"></use>
     </svg>

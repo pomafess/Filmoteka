@@ -17,7 +17,7 @@ async function searchFilmForm(e) {
         const films = await movieHttpService.get(filmsSearchOptions);        
         if ( !films.results.length) {
             myInput.insertAdjacentHTML("afterend", `
-            <p class="not-found">Search result not successful. Enter the correct movie name</p>
+            <p class="not-found">Search result is not successful. Enter the correct movie name.</p>
             `)
         } else {
             renderFilms(films, listGallery);
@@ -27,8 +27,9 @@ async function searchFilmForm(e) {
         }
         this.reset();
         if (errorMsg) {
-            errorMsg.remove();
-        }
+                errorMsg.remove();
+            }
+
     }
     catch (error) {
         console.log(error)

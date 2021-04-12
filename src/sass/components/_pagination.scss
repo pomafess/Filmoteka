@@ -1,26 +1,28 @@
 .pagination-container {
   @include flex(center, center);
+  flex-wrap: nowrap;
 }
+
 .pages-list {
   @include flex(center, center);
-  flex: 1 1 100%;
   list-style: none;
+  margin: 0;
   padding: 0;
 
   &-item {
-    @include flex(center, center);
-    flex: 0 0 40px;
+    width: 40px;
     height: 40px;
     border-radius: 5px;
     background-color: transparent;
+    cursor: pointer;
 
     &:hover .pages-list-link[data-id='pagination'],
     &:focus .pages-list-link[data-id='pagination'] {
       color: var(--primary-text-color);
     }
 
-    &[data-id='pagination-item']:hover,
-    &[data-id='pagination-item']:focus {
+    &[data-type='pagination-item']:hover,
+    &[data-type='pagination-item']:focus {
       background-color: var(--subtitle-orange-color);
     }
   }
@@ -29,6 +31,11 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 1.333;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    @include flex(center, center);
     text-decoration: none;
     color: var(--title-colour);
     background-color: transparent;
@@ -36,22 +43,37 @@
   }
 }
 
-.current-item {
-  background-color: var(--subtitle-orange-color);
-}
-.current-link {
-  color: #ffffff;
+.current {
+  &-item {
+    background-color: var(--subtitle-orange-color);
+  }
+
+  &-link {
+    color: #ffffff;
+  }
 }
 
-.active {
-  display: block;
-}
-.arrow-icon {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  stroke: var(--title-colour);
+.arrow {
+  &-btn {
+    position: relative;
+    display: none;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-bg-color);
+    border-radius: 5px;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &-icon {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    stroke: var(--title-colour);
+  }
 }
