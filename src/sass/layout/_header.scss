@@ -1,7 +1,7 @@
 .header {
-  height: 280px;
+  height: 230px;
   &-navigation {
-    @include flex(space-between);
+    @include flex(space-between, baseline);
     padding: 46px 0px;
     color: white;
   }
@@ -15,20 +15,12 @@
   }
   &-name-site {
     font-size: 30px;
-    &:hover {
-      color: #ff6b08;
-    }
   }
   &-icon {
     width: 24px;
     height: 24px;
     stroke: #818181;
     margin-right: 10px;
-    &:hover {
-      width: 30px;
-      height: 30px;
-      stroke: #ff6b08;
-    }
   }
 }
 .nav-list {
@@ -41,9 +33,6 @@
 .nav-item__link {
   text-decoration: none;
   color: white;
-  &:hover {
-    color: #ff6b08;
-  }
 }
 .search-form {
   position: relative;
@@ -63,6 +52,7 @@
     font-size: 14px;
     color: white;
     outline: none;
+    margin-bottom: 22px;
   }
 }
 .btn-search {
@@ -77,6 +67,7 @@
     width: 12px;
     height: 12px;
     stroke: white;
+    transition: stroke 500ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover {
       width: 15px;
       height: 15px;
@@ -123,4 +114,5 @@
 
 .not-found {
   color: red;
+  text-align: center;
 }

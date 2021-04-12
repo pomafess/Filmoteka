@@ -5,13 +5,13 @@ function addToQueue(id) {
   console.log(queueFilms);
   if (queueFilms.includes(id)) {
     queuehBtn.classList.add('isActive');
-    queuehBtn.textContent = 'uje v ocheredi';
+    queuehBtn.textContent = 'ADDED TO QUEUE';
   }
   queuehBtn.addEventListener('click', () => {
     queuehBtn.classList.toggle('isActive');
 
     const isActive = queuehBtn.classList.contains('isActive');
-    queuehBtn.textContent = isActive ? 'uje v ocheredi' : 'ADD TO QUEUE';
+    queuehBtn.textContent = isActive ? 'ADDED TO QUEUE' : 'ADD TO QUEUE';
 
     if (!queueFilms.includes(id)) {
       queueFilms.push(id);

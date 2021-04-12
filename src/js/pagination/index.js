@@ -60,7 +60,6 @@ const createPagination = (total_pages, filmsContainer) => {
 
         const filmsData = await movieHttpService.get(filmsSearchOptions);
         renderFilms(filmsData, filmsContainer);
-        const firstChild = document.querySelector('.film-list .film-item:first-child');
         window.scrollTo({
             top: 0,
             behavior: 'smooth',

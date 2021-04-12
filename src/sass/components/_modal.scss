@@ -5,20 +5,31 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
+.modal-body {
+  @media screen and (max-width: 767px) {
+    min-width: 280px;
+    max-width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 558px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 822px;
+  }
+}
 .modal-content {
   display: none;
   position: fixed;
   z-index: 200;
   padding: 50px 30px 40px 30px;
-
+  height: 85vh;
+  max-height: 568px;
+  overflow-y: auto;
   box-sizing: content-box;
-
   background-color: #ffffff;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;

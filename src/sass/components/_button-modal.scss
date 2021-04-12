@@ -1,6 +1,9 @@
+.btn-container {
+  display: flex;
+}
 .btn-modal {
   display: inline-block;
-  min-width: 125px;
+  width: 113px;
   height: 44px;
 
   font-family: 'Roboto', sans-serif;
@@ -30,6 +33,12 @@
   &:not(:last-child) {
     margin-right: 15px;
   }
+  @media screen and (min-width: 768px) {
+    width: 125px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 136px;
+  }
 }
 
 .btn-modal.isActive {
@@ -37,5 +46,6 @@
   width: 125.03px;
   height: 44px;
   border: none;
+  outline: none;
   background: #ff6b01;
 }
