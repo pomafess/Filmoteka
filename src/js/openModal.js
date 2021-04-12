@@ -1,5 +1,6 @@
 import addToWatched from './addToWatched.js';
 import addToQueue from './addToQueue.js';
+import closeModal from './closeModal';
 
 function openModal(modalContent) {
   const backdrop = document.querySelector('.backdrop');
@@ -12,16 +13,6 @@ function openModal(modalContent) {
 
   backdrop.classList.add('is-open');
   modalContentRef.classList.add('is-open');
-
-  // const filmList = document.querySelector('.film-list');
-  // filmList.addEventListener('click', e => {
-  //   if (e.target === e.currentTarget) {
-  //     // console.log(e.target);
-  //     return;
-  //   }
-  //   console.log('OPEN_MODAL');
-  //   backdrop.classList.add('is-open');
-  //   modalContainer.classList.add('is-open');
-  // });
+  backdrop.addEventListener('click', closeModal);
 }
 export default openModal;

@@ -16,7 +16,7 @@ function showFilmInfo(e) {
     data.then(result => {
       //data = результат вызова movieHttpService для передачи в шаблон.
       const filmInfo = filmInfoTemplate(result);
-      console.log(filmInfo);
+      console.log(typeof filmInfo);
       openModal(filmInfo);
     });
   }
