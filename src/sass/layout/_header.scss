@@ -2,7 +2,7 @@
   height: 280px;
   &-navigation {
     @include flex(space-between);
-    padding: 46px 20px;
+    padding: 46px 0px;
     color: white;
   }
 }
@@ -71,7 +71,7 @@
   background: transparent;
   outline: none;
   right: 0px;
- top: -4px;
+  top: -4px;
   cursor: pointer;
   &-icon {
     width: 12px;
