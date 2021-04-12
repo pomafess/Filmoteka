@@ -6,6 +6,7 @@ import showFilmInfo from './js/showFilmInfo';
 // import closeModal from './js/closeModal';
 import searchFilmForm from './js/searchFilmForm';
 import filmsSearchOptions from './js/filmsSearchOptions';
+import favoriteFilm from './js/localFavoriteFilms.js';
 
 import svg from './images/sprite.svg';
 import headerTemplate from './templates/header.hbs';
@@ -26,7 +27,6 @@ document.body.insertAdjacentHTML('beforeend', modalTemplate());
 const movieHttpService = new MovieHttpService();
 
 window.addEventListener('DOMContentLoaded', async () => {
-
   const listGallery = document.querySelector('.film-list');
   try {
     const filmsData = await movieHttpService.get(filmsSearchOptions);

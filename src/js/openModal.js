@@ -1,7 +1,7 @@
 import addToWatched from './addToWatched.js';
 import addToQueue from './addToQueue.js';
 
-function openModal(modalContent) {
+function openModal(modalContent, filmIdd) {
   const backdrop = document.querySelector('.backdrop');
   const modalContentRef = document.querySelector('.modal-content');
   const modalBody = modalContentRef.querySelector('.modal-body');
@@ -23,5 +23,8 @@ function openModal(modalContent) {
   //   backdrop.classList.add('is-open');
   //   modalContainer.classList.add('is-open');
   // });
+
+  addToWatched(filmIdd);
+  addToQueue(filmIdd);
 }
 export default openModal;

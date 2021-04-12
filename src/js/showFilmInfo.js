@@ -12,12 +12,13 @@ function showFilmInfo(e) {
 
   if (target !== this) {
     const { id } = target.dataset;
+    console.log(id);
     const data = movieHttpService.getMovieInfo(id);
     data.then(result => {
       //data = результат вызова movieHttpService для передачи в шаблон.
       const filmInfo = filmInfoTemplate(result);
-      console.log(filmInfo);
-      openModal(filmInfo);
+      // console.log( filmInfo);
+      openModal(filmInfo, id);
     });
   }
 }
