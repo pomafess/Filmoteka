@@ -3,7 +3,7 @@ import './sass/main.scss';
 import MovieHttpService from './js/MovieHttpService';
 import renderFilms from './js/renderMainPage';
 import showFilmInfo from './js/showFilmInfo';
-// import closeModal from './js/closeModal';
+import closeModal from './js/closeModal';
 import searchFilmForm from './js/searchFilmForm';
 import filmsSearchOptions from './js/filmsSearchOptions';
 
@@ -26,7 +26,6 @@ document.body.insertAdjacentHTML('beforeend', modalTemplate());
 const movieHttpService = new MovieHttpService();
 
 window.addEventListener('DOMContentLoaded', async () => {
-
   const listGallery = document.querySelector('.film-list');
   try {
     const filmsData = await movieHttpService.get(filmsSearchOptions);
@@ -37,6 +36,15 @@ window.addEventListener('DOMContentLoaded', async () => {
     listGallery.innerHTML = `<p>Movie is not found.</p>`;
   }
   listGallery.addEventListener('click', showFilmInfo);
+
+  const closeModalButton = document.querySelector('.close');
+  closeModalButton.addEventListener('click', closeModal);
+
+  window.addEventListener('keydown', function (e) {
+    if (e.code === 'Escape') {
+      closeModal();
+    }
+  });
 
   // const closeModalButton = modalREf.querySelector('.close');
   // closeModalButton.addEventListener('click', closeModal);

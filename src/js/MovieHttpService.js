@@ -1,5 +1,7 @@
 const axios = require('axios');
+
 import noImgSrc from "../images/no_image.jpg";
+
 
 class MovieHttpService {
   static KEY = '923c2cf88ec4338da74c768a045101f0';
@@ -17,6 +19,7 @@ class MovieHttpService {
       const genres = await this.getAllGenres();
 
       const filmCards = films.map(film => {
+        film.popularity = +film.popularity.toFixed(0);
         const filmGenres = film.genre_ids
           .map(id => {
             const result = genres.find(genre => genre.id === id);
@@ -31,7 +34,7 @@ class MovieHttpService {
           ? film.release_date.split('-')[0]
           : 'future';
         if (film.poster_path) {
-          film.poster_path = `https://image.tmdb.org/t/p/w500/${film.poster_path}`
+          film.poster_path = `https://image.tmdb.org/t/p/w500/${film.poster_path}`;
         } else {
           film.poster_path = noImgSrc;
         }
@@ -44,7 +47,7 @@ class MovieHttpService {
       return data;
     } catch (error) {
       console.log(error);
-      return error;
+      throw error;
     }
   }
 
@@ -54,10 +57,11 @@ class MovieHttpService {
     });
     try {
       const { data } = await axios.get(fullURL);
+      data.popularity = +data.popularity.toFixed(0);
       return data;
     } catch (error) {
       console.error(error);
-      return error;
+      throw error;
     }
   }
 
@@ -68,7 +72,7 @@ class MovieHttpService {
       return data.genres;
     } catch (error) {
       console.error(error);
-      return error;
+      throw error;
     }
   }
 
