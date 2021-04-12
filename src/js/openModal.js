@@ -1,15 +1,15 @@
-import addToWatched from './addToWatched.js';
-import addToQueue from './addToQueue.js';
+import addToWatched from './addToWatched';
+import addToQueue from './addToQueue';
 import closeModal from './closeModal';
 
-function openModal(modalContent) {
+function openModal(modalContent, id) {
   const backdrop = document.querySelector('.backdrop');
   const modalContentRef = document.querySelector('.modal-content');
   const modalBody = modalContentRef.querySelector('.modal-body');
   modalBody.innerHTML = modalContent;
 
-  ///найти внутри модалки кнопки
-  ///повесить слушателя который добавляет в локалсторэдж ID фильма
+  addToWatched(id);
+  addToQueue(id);
 
   backdrop.classList.add('is-open');
   modalContentRef.classList.add('is-open');
