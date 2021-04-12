@@ -70,8 +70,18 @@
   display: inline-block;
 }
 .film-item {
+  padding: 5px;
   @media screen and (min-width: 320px) {
     max-width: 280px;
     margin: 0 auto;
+  }
+  &:hover,
+  &:focus {
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
+      -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+      23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    // box-shadow: 0 0 40px rgba(0, 0, 0, 0.2) inset;
   }
 }
