@@ -9,6 +9,7 @@ async function searchFilmForm(e) {
     const listGallery = document.querySelector('.film-list');
     const myInput = this.querySelector("[name=query]");
     const myInputValue = myInput.value;
+    const errorMsg = this.querySelector('.not-found');
     
     try {
         filmsSearchOptions.options.query = myInputValue;
@@ -16,16 +17,18 @@ async function searchFilmForm(e) {
         const films = await movieHttpService.get(filmsSearchOptions);        
         if (!films.results.length) {
             myInput.insertAdjacentHTML("afterend", `
-            <p class="not-found">Search result not successful. Enter the correct movie name</p>
+            <p class="not-found">Search result is not successful. Enter the correct movie name.</p>
             `)
         } else {
             renderFilms(films, listGallery);
-            const errorMsg = this.querySelector('.not-found');
             if (errorMsg) {
                 errorMsg.remove();
             }
         }
         this.reset();
+        if (errorMsg) {
+                errorMsg.remove();
+            }
     }
     catch (error) {
         console.log(error)
