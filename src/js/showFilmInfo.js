@@ -1,5 +1,7 @@
 import MovieHttpService from './MovieHttpService.js';
 import openModal from './openModal.js';
+import { postError } from './pnotify';
+import './teamModal.js';
 
 import filmInfoTemplate from '../templates/film-info.hbs';
 
@@ -18,9 +20,7 @@ async function showFilmInfo(e) {
       openModal(filmInfo, id);
     } catch (error) {
       console.log('catch');
-      openModal(`<p>Content not found</p>
-      <button class="btn-modal btn-modal-add" data-film-id="{{id}}" style="display: none">add to watched</button>
-      <button class="btn-modal btn-modal-queue" style="display: none">add to queue</button>`);
+      postError('Content not found');
     }
   }
 }

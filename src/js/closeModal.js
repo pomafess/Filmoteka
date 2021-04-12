@@ -1,4 +1,5 @@
 import openModal from './openModal.js';
+import './teamModal';
 
 function closeModal() {
   const backdrop = document.querySelector('.backdrop');
