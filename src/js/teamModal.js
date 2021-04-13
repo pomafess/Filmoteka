@@ -11,7 +11,6 @@ import '../images/lesha.jpg';
 
 window.addEventListener('DOMContentLoaded', () => {
   const footerLink = document.querySelector('.footer-link');
-
   footerLink.addEventListener('click', onOpenFooterModal);
   function onOpenFooterModal(e) {
     e.preventDefault();
