@@ -19,7 +19,6 @@ async function showFilmInfo(e) {
       const filmInfo = filmInfoTemplate(result);
       openModal(filmInfo, id);
     } catch (error) {
-      console.log('catch');
       postError('Content not found');
     }
   }
