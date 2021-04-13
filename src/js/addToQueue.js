@@ -2,7 +2,7 @@ import queueFilms from './localQueueFilms';
 
 function addToQueue(id) {
   const queuehBtn = document.querySelector('.btn-modal-queue');
-  console.log(queueFilms);
+
   if (queueFilms.includes(id)) {
     queuehBtn.classList.add('isActive');
     queuehBtn.textContent = 'ADDED TO QUEUE';

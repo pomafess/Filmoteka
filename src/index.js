@@ -6,6 +6,7 @@ import showFilmInfo from './js/showFilmInfo';
 import closeModal from './js/closeModal';
 import searchFilmForm from './js/searchFilmForm';
 import filmsSearchOptions from './js/filmsSearchOptions';
+import loader from './js/loader';
 
 import svg from './images/sprite.svg';
 import headerTemplate from './templates/header.hbs';

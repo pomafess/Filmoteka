@@ -22,7 +22,7 @@ function openTeamModal(teamInfo) {
   const modalContentRef = document.querySelector('.modal-content');
   const modalBody = modalContentRef.querySelector('.modal-body');
   modalBody.innerHTML = teamInfo;
-  console.log(typeof teamInfo);
+
   backdrop.classList.add('is-open');
   modalContentRef.classList.add('is-open');
 }
