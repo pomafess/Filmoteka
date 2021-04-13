@@ -7,7 +7,6 @@ export function headerMenuOnClick(e) {
     }
 
     const prevActiveElement = this.querySelector('.active')
-
     prevActiveElement.classList.remove('active');
     e.target.classList.add('active');
 

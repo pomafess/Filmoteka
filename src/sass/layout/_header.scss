@@ -1,24 +1,40 @@
 .header {
   height: 230px;
   &-navigation {
-    @include flex(space-between, baseline);
     padding: 46px 0px;
+    @include flex(space-between, baseline);
     color: white;
   }
 }
 .header-bg-home {
-  background-image: url('../images/home-decktop@2x.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  @media screen and(min-width: 320px) {
+    background-image: url('../images/home-mob@2x.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  @media screen and(min-width: 768px) {
+    background-image: url('../images/home-tablet@2x.jpg');
+  }
+  @media screen and(min-width: 1024px) {
+    background-image: url('../images/home-decktop@2x.jpg');
+  }
   height: 230px;
 }
 
 .header-bg-library {
-  background-image: url('../images/liberi-decktop@2x.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  @media screen and(min-width: 320px) {
+    background-image: url('../images/liberi-mob@2x.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  @media screen and(min-width: 768px) {
+    background-image: url('../images/liberi-tablet@2x.jpg');
+  }
+  @media screen and(min-width: 1024px) {
+    background-image: url('../images/liberi-decktop@2x.jpg');
+  }
   height: 230px;
 }
 .logo {
@@ -101,16 +117,9 @@
   .search-form {
     width: 280px;
   }
-  .header {
-    // background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    //   url(../images/home-mob@2x.jpg);
-  }
 }
 @media screen and (min-width: 768px) {
-  .header {
-    // background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    //   url(../images/home-tablet@2x.jpg);
-  }
+
   .header-container {
     padding: 58px 71px;
   }
@@ -119,12 +128,6 @@
   }
   .search-form {
     width: 336px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .header {
-    // background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-    //   url(../images/home-decktop@2x.jpg);
   }
 }
 
@@ -140,4 +143,13 @@
   width: 100%;
   height: 3px;
   background-color: #ff6b08;
+}
+.header-content{
+  text-align:center;
+}
+.header-content .btn-modal{
+  color:white;
+  border: 1px solid #FFFFFF;
+box-sizing: border-box;
+border-radius: 5px;
 }
