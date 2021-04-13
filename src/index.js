@@ -38,7 +38,7 @@ document.body.insertAdjacentHTML('beforeend', modalTemplate());
 
 window.addEventListener('DOMContentLoaded', async () => {
   let {pathname} = window.location;
-  pathname = (pathname === "/Filmoteka") ? "/Filmoteka" : pathname;
+  pathname = (pathname === "/Filmoteka/") ? "/Filmoteka" : pathname;
   addHeaderMenuEventListener(headerContainer, pathname);
 
   createDynamicContent(pathname);
