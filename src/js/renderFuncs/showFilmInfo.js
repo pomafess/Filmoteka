@@ -1,9 +1,14 @@
-import MovieHttpService from './MovieHttpService.js';
-import openModal from './openModal.js';
-import { postError } from './pnotify';
-import './teamModal.js';
+// <<<<<<< HEAD:src/js/renderFuncs/showFilmInfo.js
+import MovieHttpService from '../MovieHttpService';
+import {openModal} from '../modal';
+// =======
+// import MovieHttpService from './MovieHttpService.js';
+// import openModal from './openModal.js';
+import { postError } from '../pnotify';
+import '../teamModal.js';
+// >>>>>>> dev:src/js/showFilmInfo.js
 
-import filmInfoTemplate from '../templates/film-info.hbs';
+import filmInfoTemplate from '../../templates/film-info.hbs';
 
 const movieHttpService = new MovieHttpService();
 

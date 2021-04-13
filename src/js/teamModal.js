@@ -1,5 +1,5 @@
 import teamInfoMarkup from '../templates/team-modal.hbs';
-import closeModal from './closeModal.js';
+import closeModal from './modal/closeModal.js';
 import '../images/vlad.jpg';
 import '../images/max.jpg';
 import '../images/vika.jpg';

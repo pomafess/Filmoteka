@@ -1,18 +1,28 @@
 import './sass/main.scss';
 
-import MovieHttpService from './js/MovieHttpService';
-import renderFilms from './js/renderMainPage';
-import showFilmInfo from './js/showFilmInfo';
-import closeModal from './js/closeModal';
+import "./js/localFilms";
+
+import {showFilmInfo} from './js/renderFuncs';
+import {closeModal} from './js/modal';
 import searchFilmForm from './js/searchFilmForm';
-import filmsSearchOptions from './js/filmsSearchOptions';
+
+import {createDynamicContent} from "./js/renderFuncs";
+import './js/filmsSearchOptions';
+import addHeaderMenuEventListener from "./js/header";
+
+import { routes } from "./js/routes";
+
+
 import loader from './js/loader';
 
+
 import svg from './images/sprite.svg';
+
 import headerTemplate from './templates/header.hbs';
 import mainGalleryTemplate from './templates/main-gallery.hbs';
 import footerTemplate from './templates/footer.hbs';
 import modalTemplate from './templates/modal.hbs';
+// import formHeaderRender from "./templates/formHeaderRender.hbs"; 
 
 const headerContainer = document.getElementById('header');
 const mainContainer = document.getElementById('main');
@@ -24,32 +34,26 @@ mainContainer.innerHTML = mainGalleryTemplate();
 footerContainer.innerHTML = footerTemplate({ src: svg });
 document.body.insertAdjacentHTML('beforeend', modalTemplate());
 
-const movieHttpService = new MovieHttpService();
+// const movieHttpService = new MovieHttpService();
 
 window.addEventListener('DOMContentLoaded', async () => {
-  const listGallery = document.querySelector('.film-list');
-  try {
-    const filmsData = await movieHttpService.get(filmsSearchOptions);
+  let {pathname} = window.location;
+  pathname = (pathname === "/") ? "/home" : pathname;
+  addHeaderMenuEventListener(headerContainer, pathname);
 
-    renderFilms(filmsData, listGallery);
-  } catch (error) {
-    console.log(error);
-    listGallery.innerHTML = `<p>Movie is not found.</p>`;
-  }
+  createDynamicContent(pathname);
+
+  const headerPageContent = headerContainer.querySelector('#header-content');
+
+  const listGallery = document.querySelector('.film-list');
   listGallery.addEventListener('click', showFilmInfo);
 
-  const closeModalButton = document.querySelector('.close');
+  const closeModalButton = document.querySelector('.modal-content .close');
   closeModalButton.addEventListener('click', closeModal);
-
   window.addEventListener('keydown', function (e) {
     if (e.code === 'Escape') {
       closeModal();
     }
   });
-
-  // const closeModalButton = modalREf.querySelector('.close');
-  // closeModalButton.addEventListener('click', closeModal);
-
-  const formSearch = document.getElementById('search-form');
-  formSearch.addEventListener('submit', searchFilmForm);
+  
 });

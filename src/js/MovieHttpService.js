@@ -62,6 +62,30 @@ class MovieHttpService {
     }
   }
 
+  async getFilmsById(filmsId){
+    const filmRequests = filmsId.map(id => this.getMovieInfo(id));
+    const filmResponses = await Promise.allSettled(filmRequests);
+    const films = filmResponses.filter(({status}) => status === "fulfilled").map(({value}) => value);
+
+    const results = films.map(film => {
+        if (film.poster_path) {
+          film.poster_path = `https://image.tmdb.org/t/p/w500/${film.poster_path}`;
+        } else {
+          film.poster_path = noImgSrc;
+        }      
+        film.genres = film.genres.map(({name}) => name);
+        
+        film.release_year = film.release_date ? film.release_date.split('-')[0] : 'future';
+        film.title = film.original_title || film.original_name;
+        return film;
+    })
+    return {
+      page: 1, 
+      total_pages: 1,
+      results
+    }
+  }
+
   async getAllGenres() {
     const fullURL = this.getFullUrl({ endpoint: 'genre/movie/list' });
     try {

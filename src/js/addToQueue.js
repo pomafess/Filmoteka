@@ -1,4 +1,4 @@
-import queueFilms from './localQueueFilms';
+import {queueFilms} from './localFilms';
 
 function addToQueue(id) {
   const queuehBtn = document.querySelector('.btn-modal-queue');
@@ -7,6 +7,7 @@ function addToQueue(id) {
     queuehBtn.classList.add('isActive');
     queuehBtn.textContent = 'ADDED TO QUEUE';
   }
+
   queuehBtn.addEventListener('click', () => {
     queuehBtn.classList.toggle('isActive');
 
@@ -25,4 +26,5 @@ function addToQueue(id) {
     localStorage.setItem('queue-films', queueFilmString);
   });
 }
+
 export default addToQueue;
