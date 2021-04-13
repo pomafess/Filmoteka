@@ -119,7 +119,6 @@
   }
 }
 @media screen and (min-width: 768px) {
-
   .header-container {
     padding: 58px 71px;
   }
@@ -135,7 +134,7 @@
   color: red;
   text-align: center;
 }
-.active::after {
+.nav-list .active::after {
   position: absolute;
   content: '';
   left: 0;
@@ -144,12 +143,12 @@
   height: 3px;
   background-color: #ff6b08;
 }
-.header-content{
-  text-align:center;
+.header-content {
+  text-align: center;
 }
-.header-content .btn-modal{
-  color:white;
-  border: 1px solid #FFFFFF;
-box-sizing: border-box;
-border-radius: 5px;
+.header-content .btn-modal {
+  color: white;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
