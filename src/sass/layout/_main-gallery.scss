@@ -39,6 +39,7 @@
   &-text-box {
     @include flex;
     margin-top: 5px;
+    position: relative;
   }
   &-genres {
     font-weight: 500;
@@ -54,13 +55,16 @@
     font-size: 12px;
     line-height: 1.166;
     text-align: center;
-    padding: 1px;
+    @include flex(center, center);
     margin-left: 5px;
     width: 36px;
     height: 16px;
     border-radius: 5px;
     background-color: var(--subtitle-orange-color);
     color: white;
+    position: absolute;
+    top: -50px;
+    right: 0px;
   }
 }
 .film-text-date::before {
@@ -70,8 +74,18 @@
   display: inline-block;
 }
 .film-item {
+  padding: 5px;
   @media screen and (min-width: 320px) {
     max-width: 280px;
     margin: 0 auto;
+  }
+  &:hover,
+  &:focus {
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 1),
+      -23px 0 20px -23px rgba(0, 0, 0, 0.8),
+      23px 0 20px -23px rgba(0, 0, 0, 0.8), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    // box-shadow: 0 0 40px rgba(0, 0, 0, 0.2) inset;
   }
 }

@@ -5,11 +5,16 @@ import "./js/localFilms";
 import {showFilmInfo} from './js/renderFuncs';
 import {closeModal} from './js/modal';
 import searchFilmForm from './js/searchFilmForm';
+
 import {createDynamicContent} from "./js/renderFuncs";
 import './js/filmsSearchOptions';
 import addHeaderMenuEventListener from "./js/header";
 
 import { routes } from "./js/routes";
+
+
+import loader from './js/loader';
+
 
 import svg from './images/sprite.svg';
 

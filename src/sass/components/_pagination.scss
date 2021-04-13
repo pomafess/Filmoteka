@@ -15,16 +15,6 @@
     border-radius: 5px;
     background-color: transparent;
     cursor: pointer;
-
-    &:hover .pages-list-link[data-id='pagination'],
-    &:focus .pages-list-link[data-id='pagination'] {
-      color: var(--primary-text-color);
-    }
-
-    &[data-type='pagination-item']:hover,
-    &[data-type='pagination-item']:focus {
-      background-color: var(--subtitle-orange-color);
-    }
   }
 
   &-link {

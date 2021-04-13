@@ -1,7 +1,6 @@
 const axios = require('axios');
 
-import noImgSrc from "../images/no_image.jpg";
-
+import noImgSrc from '../images/no_image.jpg';
 
 class MovieHttpService {
   static KEY = '923c2cf88ec4338da74c768a045101f0';
@@ -46,7 +45,6 @@ class MovieHttpService {
       data.results = filmCards;
       return data;
     } catch (error) {
-      console.log(error);
       throw error;
     }
   }
@@ -60,7 +58,6 @@ class MovieHttpService {
       data.popularity = +data.popularity.toFixed(0);
       return data;
     } catch (error) {
-      console.error(error);
       throw error;
     }
   }
@@ -95,7 +92,6 @@ class MovieHttpService {
       const { data } = await axios.get(fullURL);
       return data.genres;
     } catch (error) {
-      console.error(error);
       throw error;
     }
   }

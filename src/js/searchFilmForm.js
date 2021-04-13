@@ -14,6 +14,7 @@ async function searchFilmForm(e) {
     try {
         filmsSearchOptions.options.query = myInputValue;
         filmsSearchOptions.endpoint = "search/movie";
+        filmsSearchOptions.options.page = 1;
         const films = await movieHttpService.get(filmsSearchOptions);        
         if ( !films.results.length) {
             myInput.insertAdjacentHTML("afterend", `

@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <title>Filmoteka</title>
+    <meta property="og:title" content="Filmoteka" />
+    <meta property="og:type" content="video.movie" />
+    <meta property="og:url" content="https://pomafess.github.io/Filmoteka" />
+    <meta property="og:image" content="./image/liberi-decktop.jpg" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -19,9 +24,26 @@
     />
   </head>
   <body>
+
     <header id="header" class="header head header-bg-home"></header>
+
+    <div id="p_prldr">
+      <div class="contpre">
+        <span class="svg_anm"></span><br />Loading...<br /><small
+          >Don't worry be happy</small
+        >
+      </div>
+    </div>
+
     <!-- <header id="header-2"></header> -->
     <main id="main" class="box"></main>
+
     <footer id="footer" class="footer"></footer>
+
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"
+    ></script>
+
   </body>
 </html>

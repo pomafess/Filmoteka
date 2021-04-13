@@ -5,13 +5,13 @@ function addToWatched(id) {
 
   if (favoriteFilms.includes(id)) {
     addWatchBtn.classList.add('isActive');
-    addWatchBtn.textContent = 'uje posmotrel';
+    addWatchBtn.textContent = 'ADDED TO LIBRARY';
   }
   addWatchBtn.addEventListener('click', () => {
     addWatchBtn.classList.toggle('isActive');
 
     const isActive = addWatchBtn.classList.contains('isActive');
-    addWatchBtn.textContent = isActive ? 'uje est v bibl' : 'add to watched';
+    addWatchBtn.textContent = isActive ? 'ADDED TO LIBRARY' : 'ADD TO WATCHED';
 
     if (!favoriteFilms.includes(id)) {
       favoriteFilms.push(id);

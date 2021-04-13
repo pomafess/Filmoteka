@@ -4,37 +4,46 @@
   @media screen and (min-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }
+  @media screen and (min-width: 1024px) {
+    gap: 0px;
+  }
 }
-
+.modal-body {
+  @media screen and (max-width: 767px) {
+    min-width: 280px;
+    max-width: 480px;
+  }
+  @media screen and (min-width: 768px) {
+    width: 558px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 822px;
+    gap: 0px;
+  }
+}
 .modal-content {
   display: none;
   position: fixed;
   z-index: 200;
   padding: 50px 30px 40px 30px;
-
+  max-height: 568px;
+  overflow-y: auto;
   box-sizing: content-box;
-
   background-color: #ffffff;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
   animation-duration: 1s;
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1024px) {
+    padding-right: 70px;
+  }
 }
-// @-webkit-keyframes animatetop {
-//   from {
-//     top: -300px;
-//     opacity: 0;
-//   }
-//   to {
-//     top: 0;
-//     opacity: 1;
-//   }
-// }
 
 @keyframes animatetop {
   from {
@@ -50,28 +59,6 @@
 .modal-content.is-open {
   display: block;
 }
-
-// @-webkit-keyframes animatetop {
-//   from {
-//     top: -300px;
-//     opacity: 0;
-//   }
-//   to {
-//     top: 0;
-//     opacity: 1;
-//   }
-// }
-
-// @keyframes animatetop {
-//   from {
-//     top: -300px;
-//     opacity: 0;
-//   }
-//   to {
-//     top: 0;
-//     opacity: 1;
-//   }
-// }
 
 .close {
   position: absolute;
@@ -93,24 +80,18 @@
   cursor: pointer;
 }
 
-// стили по HTML разметке
-// .modal-content {
-//   display: flex;
-//   padding: 50px 30px 40px 30px;
-
-//   display: flex;
-
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-//   grid-gap: 30px;
-// }
-
 .img-poster {
   display: block;
   // border: 1px solid red;
   background-color: rgb(102, 92, 92);
-  width: 100%;
-  height: 100%;
+  @media screen and (max-width: 1023px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 1024px) {
+    // width: 396px;
+    margin: 0 auto;
+  }
+  max-height: 478px;
 }
 
 .modal-info {
