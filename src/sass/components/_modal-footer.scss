@@ -2,7 +2,6 @@
   &-list {
     @include grid(200px, auto-fill);
     grid-gap: 30px;
-    width: 822px;
   }
   &-item {
     text-align: center;

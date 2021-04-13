@@ -39,6 +39,7 @@
   &-text-box {
     @include flex;
     margin-top: 5px;
+    position: relative;
   }
   &-genres {
     font-weight: 500;
@@ -54,13 +55,16 @@
     font-size: 12px;
     line-height: 1.166;
     text-align: center;
-    padding: 1px;
+    @include flex(center, center);
     margin-left: 5px;
     width: 36px;
     height: 16px;
     border-radius: 5px;
     background-color: var(--subtitle-orange-color);
     color: white;
+    position: absolute;
+    top: -50px;
+    right: 0px;
   }
 }
 .film-text-date::before {
