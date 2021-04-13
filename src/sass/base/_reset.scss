@@ -4,6 +4,8 @@ html {
 body {
   font-family: 'Roboto', sans-serif;
   font-style: normal;
+  position: relative;
+  min-height: 100vh;
 }
 *,
 *::before,

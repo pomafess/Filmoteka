@@ -7,7 +7,7 @@ import onFilmAction from "./onFilmAction";
 
 export const routes = [
     {
-        pathname: "/home",
+        pathname: "/Filmoteka",
         template: formHeaderRender,
         headerClass: "header-bg-home",
         afterRender: ()=> {
