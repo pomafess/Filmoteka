@@ -1,5 +1,5 @@
-import addToWatched from './addToWatched';
-import addToQueue from './addToQueue';
+import addToWatched from '../addToWatched';
+import addToQueue from '../addToQueue';
 import closeModal from './closeModal';
 
 function openModal(modalContent, id) {
@@ -15,4 +15,5 @@ function openModal(modalContent, id) {
   modalContentRef.classList.add('is-open');
   backdrop.addEventListener('click', closeModal);
 }
+
 export default openModal;

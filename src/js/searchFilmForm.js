@@ -1,6 +1,6 @@
-import MovieHttpService from './MovieHttpService.js';
-import renderFilms from './renderMainPage';
-import filmsSearchOptions from './filmsSearchOptions.js';
+import MovieHttpService from './MovieHttpService';
+import {renderFilms} from './renderFuncs';
+import filmsSearchOptions from './filmsSearchOptions';
 
 const movieHttpService = new MovieHttpService();
 
@@ -36,4 +36,5 @@ async function searchFilmForm(e) {
         return error;
     }
 }
+
 export default searchFilmForm;

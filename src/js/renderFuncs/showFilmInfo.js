@@ -1,7 +1,7 @@
-import MovieHttpService from './MovieHttpService.js';
-import openModal from './openModal.js';
+import MovieHttpService from '../MovieHttpService';
+import {openModal} from '../modal';
 
-import filmInfoTemplate from '../templates/film-info.hbs';
+import filmInfoTemplate from '../../templates/film-info.hbs';
 
 const movieHttpService = new MovieHttpService();
 

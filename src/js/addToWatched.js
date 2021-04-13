@@ -1,9 +1,9 @@
-import favoriteFilm from './localFavoriteFilms.js';
+import {favoriteFilms} from './localFilms';
 
 function addToWatched(id) {
   const addWatchBtn = document.querySelector('.btn-modal-add');
 
-  if (favoriteFilm.includes(id)) {
+  if (favoriteFilms.includes(id)) {
     addWatchBtn.classList.add('isActive');
     addWatchBtn.textContent = 'uje posmotrel';
   }
@@ -13,14 +13,14 @@ function addToWatched(id) {
     const isActive = addWatchBtn.classList.contains('isActive');
     addWatchBtn.textContent = isActive ? 'uje est v bibl' : 'add to watched';
 
-    if (!favoriteFilm.includes(id)) {
-      favoriteFilm.push(id);
+    if (!favoriteFilms.includes(id)) {
+      favoriteFilms.push(id);
     } else {
-      const index = favoriteFilm.indexOf(id);
-      favoriteFilm.splice(index, 1);
+      const index = favoriteFilms.indexOf(id);
+      favoriteFilms.splice(index, 1);
     }
 
-    const favoriteFilmString = JSON.stringify(favoriteFilm);
+    const favoriteFilmString = JSON.stringify(favoriteFilms);
 
     localStorage.setItem('favorite-films', favoriteFilmString);
   });

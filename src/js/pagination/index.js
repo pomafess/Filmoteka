@@ -2,7 +2,7 @@ import paginationTemplate from '../../templates/pagination.hbs';
 import MovieHttpService from '../MovieHttpService.js';
 import createPaginationArray from "./createPaginationArray.js";
 import filmsSearchOptions from "../filmsSearchOptions.js";
-import renderFilms from "../renderMainPage";
+import {renderFilms} from "../renderFuncs";
 import svg from '../../images/sprite.svg';
 
 const movieHttpService = new MovieHttpService();

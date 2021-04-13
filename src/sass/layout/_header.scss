@@ -1,10 +1,25 @@
 .header {
-  height: 280px;
+  height: 230px;
   &-navigation {
     @include flex(space-between);
     padding: 46px 0px;
     color: white;
   }
+}
+.header-bg-home {
+  background-image: url('../images/home-decktop@2x.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 230px;
+}
+
+.header-bg-library {
+  background-image: url('../images/liberi-decktop@2x.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 230px;
 }
 .logo {
   @include flex;
@@ -34,6 +49,10 @@
 .nav-list {
   @include flex(flex-start, center);
   list-style: none;
+  &__item {
+    position: relative;
+    padding-bottom: 3px;
+  }
   &__item:first-child {
     margin-right: 39px;
   }
@@ -92,17 +111,14 @@
     width: 280px;
   }
   .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(../images/home-mob@2x.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    // background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    //   url(../images/home-mob@2x.jpg);
   }
 }
 @media screen and (min-width: 768px) {
   .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(../images/home-tablet@2x.jpg);
+    // background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    //   url(../images/home-tablet@2x.jpg);
   }
   .header-container {
     padding: 58px 71px;
@@ -116,11 +132,20 @@
 }
 @media screen and (min-width: 1024px) {
   .header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
-      url(../images/home-decktop@2x.jpg);
+    // background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
+    //   url(../images/home-decktop@2x.jpg);
   }
 }
 
 .not-found {
   color: red;
+}
+.active::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #ff6b08;
 }
