@@ -3,7 +3,7 @@ import { routes } from "../routes";
 const createDynamicContent = (path) => {
     const headerPageContent = document.querySelector('#header-content');
 
-    const { template, afterRender, selector, actionType, listener, headerClass } = routes.find(obj => obj.pathname === path);
+    const { template, afterRender, selector, actionType, listner, headerClass } = routes.find(obj => obj.pathname === path);
 
     headerPageContent.innerHTML = template();
     if(afterRender){
@@ -11,7 +11,7 @@ const createDynamicContent = (path) => {
     }
     if (selector) {
         const elem = document.querySelector(selector);
-        elem.addEventListener(actionType, listener);
+        elem.addEventListener(actionType, listner);
     }
     if (headerClass) {
         const header = document.querySelector('.head')

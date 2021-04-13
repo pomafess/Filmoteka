@@ -1,13 +1,14 @@
-import  {queueFilms, favoriteFilms}  from "./localFilms";
+// import  {queueFilms, favoriteFilms}  from "./localFilms";
+import {renderWatchedFilms,renderQueueFilms} from "./renderFuncs";
 
 async function onFilmAction(e) {
     e.preventDefault();
-
-    const watch = document.getElementById('watch')
-    const queue = document.getElementById('queue')
-
-    console.log(watch);
-    console.log(queue);
+    if(e.target.id === "watch") {
+        renderWatchedFilms();
+    }
+    if(e.target.id === "queue") {
+        renderQueueFilms();
+    }    
 }
 
 export default onFilmAction;

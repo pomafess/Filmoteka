@@ -6,16 +6,6 @@ import searchFilmForm  from "./searchFilmForm";
 import onFilmAction from "./onFilmAction";
 
 export const routes = [
-        {
-        pathname: "/",
-        template: formHeaderRender,
-        headerClass: "header-bg-home",
-        afterRender: ()=> {
-            const formSearch = document.getElementById('search-form');
-            formSearch.addEventListener('submit', searchFilmForm);
-            renderTrendFilms();
-        }
-    },
     {
         pathname: "/home",
         template: formHeaderRender,

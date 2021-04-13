@@ -32,9 +32,10 @@ document.body.insertAdjacentHTML('beforeend', modalTemplate());
 // const movieHttpService = new MovieHttpService();
 
 window.addEventListener('DOMContentLoaded', async () => {
-  addHeaderMenuEventListener(headerContainer);
+  let {pathname} = window.location;
+  pathname = (pathname === "/") ? "/home" : pathname;
+  addHeaderMenuEventListener(headerContainer, pathname);
 
-  const {pathname} = window.location;
   createDynamicContent(pathname);
 
   const headerPageContent = headerContainer.querySelector('#header-content');
